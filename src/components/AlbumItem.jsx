@@ -1,13 +1,9 @@
-export default function AlbumItem() {
+export default function AlbumItem({ imageUrl, title, author }) {
   return (
     <div className="album-item">
-      <img
-        src="https://placehold.co/360/1ed760/000000/png"
-        alt=""
-        className="album-poster"
-      />
-      <h4 className="album-title">Название альбома</h4>
-      <p className="album-artist">Имя исполнителя</p>
+      <img src={imageUrl} alt={title} className="album-poster" />
+      <h4 className="album-title">{title}</h4>
+      <p className="album-artist">{author}</p>
     </div>
   );
 }
