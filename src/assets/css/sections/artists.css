@@ -1,0 +1,59 @@
+.artist-wrapper {
+  flex-grow: 1;
+  margin-top: 32px;
+  overflow-y: scroll;
+}
+
+.artist-wrapper::-webkit-scrollbar {
+  width: 15px;
+}
+
+.artist-wrapper::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+.artist-wrapper::-webkit-scrollbar-thumb {
+  background: var(--light-gray);
+  border-radius: 10px;
+  border: 3px solid var(--black);
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0 24px;
+}
+
+.artist-item {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.artist-item:hover {
+  background: var(--dark);
+}
+
+.artist-poster {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.artist-name {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+}
+
+.artist-type {
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--light-gray);
+  text-align: center;
+}

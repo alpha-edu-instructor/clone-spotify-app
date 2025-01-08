@@ -1,6 +1,6 @@
 import { FiSearch } from "react-icons/fi";
 import { GrHomeRounded } from "react-icons/gr";
-import logo from "../assets/img/logo.svg";
+import logo from "../../assets/img/logo.svg";
 
 export default function Header() {
   return (

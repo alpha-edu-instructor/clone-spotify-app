@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import AlbumItem from "./AlbumItem";
-import Loader from "./Loader";
-import Error from "./Error";
-import { albumLinks, ACCESS_TOKEN } from "../utils/consts";
+import Loader from "../core/Loader";
+import Error from "../core/Error";
+import { albumLinks, ACCESS_TOKEN } from "../../utils/consts";
 
 export default function AlbumList() {
   const [albums, setAlbums] = useState([]);
@@ -37,26 +37,23 @@ export default function AlbumList() {
   }, []);
 
   return (
-    <div className="wrapper">
-      <h1 className="wrapper-title">Популярные альбомы</h1>
-      <div className="album-wrapper">
-        {isLoading ? (
-          <Loader />
-        ) : isError ? (
-          <Error />
-        ) : (
-          <div className="album-grid">
-            {albums.map((item) => (
-              <AlbumItem
-                title={item.name}
-                author={item.artists[0].name}
-                imageUrl={item.images[0].url}
-                key={item.id}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+    <div className="album-wrapper">
+      {isLoading ? (
+        <Loader />
+      ) : isError ? (
+        <Error />
+      ) : (
+        <div className="album-grid">
+          {albums.map((item) => (
+            <AlbumItem
+              title={item.name}
+              author={item.artists[0].name}
+              imageUrl={item.images[0].url}
+              key={item.id}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
