@@ -57,3 +57,57 @@
   color: var(--light-gray);
   text-align: center;
 }
+
+.artist-img {
+  width: 240px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.artist-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.artist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.artist-content__verify {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+.artist-content__verify svg {
+  color: var(--blue);
+  font-size: 24px;
+}
+
+.artist-content__name {
+  color: var(--white);
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 900;
+}
+
+.artist-content__audience {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: var(--white);
+}

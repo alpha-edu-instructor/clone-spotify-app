@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AlbumItem from "./AlbumItem";
-import Loader from "../core/Loader";
-import Error from "../core/Error";
+import Loader from "../shared/Loader";
+import Error from "../shared/Error";
 import { albumLinks, ACCESS_TOKEN } from "../../utils/consts";
 
 export default function AlbumList() {
@@ -24,7 +24,6 @@ export default function AlbumList() {
           }
         );
         const data = await response.json();
-        console.log(JSON.stringify(data.albums));
         setAlbums(data.albums);
       } catch (error) {
         console.log("Error:", error);
@@ -49,6 +48,7 @@ export default function AlbumList() {
               title={item.name}
               author={item.artists[0].name}
               imageUrl={item.images[0].url}
+              id={item.id}
               key={item.id}
             />
           ))}

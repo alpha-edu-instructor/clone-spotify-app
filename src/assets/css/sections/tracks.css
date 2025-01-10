@@ -1,0 +1,88 @@
+.track-line {
+  padding: 8px 0;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 60px 1fr 96px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.track-line__extended {
+  grid-template-columns: 60px 88px 5fr 2fr 96px !important;
+}
+
+.track-table__title {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.track-poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-poster img {
+  width: 40px;
+  height: 40px;
+}
+
+.track-number,
+.track-duration,
+.track-audience {
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--light-gray);
+}
+
+.track-song__name {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.track-song__author {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--light-gray);
+  font-weight: 400;
+}
+
+.track-line:hover {
+  background: var(--dark);
+}
+
+.track-table {
+  margin-top: 36px;
+}
+
+.track-table__header {
+  display: grid;
+  grid-template-columns: 60px 1fr 96px;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.track-header__text {
+  color: var(--light-gray);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.track-header__text:first-child,
+.track-header__text:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+.track-header__text svg {
+  font-size: 16px;
+}

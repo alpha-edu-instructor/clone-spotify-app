@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { artistsLinks, ACCESS_TOKEN } from "../../utils/consts";
 import ArtistItem from "./ArtistItem";
-import Loader from "../core/Loader";
-import Error from "../core/Error";
+import Loader from "../shared/Loader";
+import Error from "../shared/Error";
 
 export default function ArtistList() {
   const [artists, setArtists] = useState([]);
@@ -24,7 +24,6 @@ export default function ArtistList() {
           }
         );
         const data = await response.json();
-        console.log(data.artists);
         setArtists(data.artists);
       } catch (error) {
         console.log("Error:", error);

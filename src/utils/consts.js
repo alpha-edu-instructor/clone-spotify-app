@@ -1,5 +1,10 @@
+export const ALBUMS_PAGE_ROUTE = "/";
+export const ARTISTS_PAGE_ROUTE = "/artists";
+export const SETTINGS_PAGE_ROUTE = "/settings";
+export const SINGLE_ALBUM_PAGE_ROUTE = "/albums/:id";
+
 export const ACCESS_TOKEN =
-  "BQCXNFxAWwDSJ38jpeKpxXBZBHgNLm2Fqm1GxLsXMEIGBWkxqCA6RMNLwr61H4PW2OmRB1BEKsPWnAtGL3vkzhKDndIZPOvA383i9FOfI3P-I5V7prU";
+  "BQBbOKptVwbNFYjFjG5IbCvG0RmaRO9pTkOEjiqx38eLOx5LSNB5lX9KVbmncmo8Q4BLnDgF9k_FI2yEyNXLaJA44JnIy5z-tofGsMmjCT51zpavecU";
 export const albumLinks = [
   "78bpIziExqiI9qztvNFlQu",
   "2ODvWsOgouMbaA5xf0RkJe",

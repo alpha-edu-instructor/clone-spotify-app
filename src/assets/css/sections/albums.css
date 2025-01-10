@@ -55,3 +55,64 @@
   font-weight: 400;
   color: var(--light-gray);
 }
+
+.album-img {
+  width: 240px;
+  aspect-ratio: 1/1;
+}
+
+.album-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.album-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.album-content__type {
+  color: var(--white);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+.album-content__name {
+  color: var(--white);
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 900;
+}
+
+.album-content__author {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.album-content__circle {
+  width: 4px;
+  height: 4px;
+  background: var(--light-gray);
+  border-radius: 100%;
+}
+
+.album-content__author p {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: var(--light-gray);
+}
+
+.album-content__author span {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
