@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { artistsLinks, ACCESS_TOKEN } from "../../utils/consts";
+import { artistsLinks } from "../../utils/consts";
 import ArtistItem from "./ArtistItem";
 import Loader from "../shared/Loader";
 import Error from "../shared/Error";
@@ -19,7 +19,7 @@ export default function ArtistList() {
           {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${ACCESS_TOKEN}`
+              Authorization: `Bearer ${localStorage.getItem("token")}`
             }
           }
         );
@@ -47,7 +47,8 @@ export default function ArtistList() {
             <ArtistItem
               name={artist.name}
               profilePictureUrl={artist.images[0].url}
-              key={artist}
+              id={artist.id}
+              key={artist.id}
             />
           ))}
         </div>

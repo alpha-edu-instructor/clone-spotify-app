@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AlbumItem from "./AlbumItem";
 import Loader from "../shared/Loader";
 import Error from "../shared/Error";
-import { albumLinks, ACCESS_TOKEN } from "../../utils/consts";
+import { albumLinks } from "../../utils/consts";
 
 export default function AlbumList() {
   const [albums, setAlbums] = useState([]);
@@ -19,7 +19,7 @@ export default function AlbumList() {
           {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${ACCESS_TOKEN}`
+              Authorization: `Bearer ${localStorage.getItem("token")}`
             }
           }
         );
