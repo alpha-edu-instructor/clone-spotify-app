@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AppRouter from "./components/core/AppRouter";
 import Layout from "./components/core/Layout";
-import { getAccessToken } from "./utils/auth";
+import { getAccessToken } from "./services/auth";
 import "./assets/css/style.css";
 
 export default function App() {

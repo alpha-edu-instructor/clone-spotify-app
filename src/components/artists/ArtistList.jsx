@@ -3,6 +3,7 @@ import { artistsLinks } from "../../utils/consts";
 import ArtistItem from "./ArtistItem";
 import Loader from "../shared/Loader";
 import Error from "../shared/Error";
+import { axiosInstance } from "../../services/axios";
 
 export default function ArtistList() {
   const [artists, setArtists] = useState([]);
@@ -14,17 +15,13 @@ export default function ArtistList() {
       try {
         setLoading(true);
         const ids = artistsLinks.join(",");
-        const response = await fetch(
-          `https://api.spotify.com/v1/artists?ids=${ids}&market=KZ`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
-            }
+        const res = await axiosInstance.get("/artists", {
+          params: {
+            ids: ids,
+            market: "KZ"
           }
-        );
-        const data = await response.json();
-        setArtists(data.artists);
+        });
+        setArtists(res.data.artists);
       } catch (error) {
         console.log("Error:", error);
         setError(true);

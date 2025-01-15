@@ -5,6 +5,7 @@ import { FaRegClock } from "react-icons/fa";
 import Loader from "../components/shared/Loader";
 import TrackItem from "../components/tracks/TrackItem";
 import { convertMsToTime } from "../utils/utils";
+import { axiosInstance } from "../services/axios";
 
 export default function AlbumPage() {
   const { id } = useParams();
@@ -15,17 +16,8 @@ export default function AlbumPage() {
     async function fetchAlbumData() {
       try {
         setLoading(true);
-        const response = await fetch(
-          `https://api.spotify.com/v1/albums/${id}?market=KZ`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
-            }
-          }
-        );
-        const data = await response.json();
-        setAlbumData(data);
+        const res = await axiosInstance.get(`/albums/${id}?market=KZ`, {});
+        setAlbumData(res.data);
       } catch (error) {
         console.log(error);
       } finally {

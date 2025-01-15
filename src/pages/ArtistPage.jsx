@@ -4,6 +4,7 @@ import { PiSealCheckFill } from "react-icons/pi";
 import Loader from "../components/shared/Loader";
 import TrackItem from "../components/tracks/TrackItem";
 import { convertMsToTime } from "../utils/utils";
+import { axiosInstance } from "../services/axios";
 
 export default function ArtistPage() {
   const { id } = useParams();
@@ -15,29 +16,15 @@ export default function ArtistPage() {
     async function fetchArtistData() {
       try {
         setIsLoading(true);
-        const responseArtist = await fetch(
-          `https://api.spotify.com/v1/artists/${id}?market=KZ`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
-            }
-          }
+        const responseArtist = await axiosInstance.get(
+          `artists/${id}?market=KZ`
         );
-        const responseTracks = await fetch(
-          `https://api.spotify.com/v1/artists/${id}/top-tracks?market=KZ`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
-            }
-          }
+        const responseTracks = await axiosInstance.get(
+          `artists/${id}/top-tracks?market=KZ`
         );
-        const dataArtist = await responseArtist.json();
-        const dataTracks = await responseTracks.json();
-        console.log(dataTracks.tracks);
-        setArtistData(dataArtist);
-        setTracks(dataTracks.tracks);
+
+        setArtistData(responseArtist.data);
+        setTracks(responseTracks.data.tracks);
       } catch (error) {
         console.log(error);
       } finally {
