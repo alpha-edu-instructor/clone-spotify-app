@@ -3,6 +3,7 @@ export const ARTISTS_PAGE_ROUTE = "/artists";
 export const SETTINGS_PAGE_ROUTE = "/settings";
 export const SINGLE_ALBUM_PAGE_ROUTE = "/albums/:id";
 export const SINGLE_ARTIST_PAGE_ROUTE = "/artists/:id";
+export const SEARCH_PAGE_ROUTE = "/search";
 
 export const ACCESS_TOKEN =
   "BQC5v1gjHWqWlJjEWk3g-P3dqNRFDvWuVBPdNGkOBs1JD0mE60pLGNsKE-MNg6JGpef_L7Vfw3tESQHGM-EZ_Oy31AH1tnTv6G5t_3eah_0FH85Q1V8";

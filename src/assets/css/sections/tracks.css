@@ -15,7 +15,7 @@
   font-size: 24px;
   line-height: 36px;
   font-weight: 800;
-  color: var(--white);
+  color: var(--light);
   margin-bottom: 24px;
 }
 
@@ -36,25 +36,25 @@
   text-align: center;
   font-size: 14px;
   line-height: 16px;
-  color: var(--light-gray);
+  color: var(--text);
 }
 
 .track-song__name {
   font-size: 16px;
   line-height: 24px;
-  color: var(--white);
+  color: var(--light);
   font-weight: 500;
 }
 
 .track-song__author {
   font-size: 14px;
   line-height: 14px;
-  color: var(--light-gray);
+  color: var(--text);
   font-weight: 400;
 }
 
 .track-line:hover {
-  background: var(--dark);
+  background: var(--secondary-color);
 }
 
 .track-table {
@@ -71,7 +71,7 @@
 }
 
 .track-header__text {
-  color: var(--light-gray);
+  color: var(--text);
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;

@@ -1,0 +1,40 @@
+.theme {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+
+.theme-text {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.toggle {
+  position: relative;
+  width: 88px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+.toggle__active > .toggle-round {
+  left: 46px;
+  background: var(--green);
+}
+
+.toggle-round {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  background: var(--border);
+  cursor: pointer;
+  transition: 0.3s ease;
+}

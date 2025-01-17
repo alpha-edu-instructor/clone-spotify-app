@@ -1,6 +1,6 @@
 .sidebar {
   padding: 36px 16px 24px;
-  background: var(--black);
+  background: var(--primary-color);
   border-radius: 12px;
   max-width: 420px;
   height: 100%;
@@ -20,13 +20,13 @@
 
 .sidebar-header svg {
   font-size: 32px;
-  color: var(--light-gray);
+  color: var(--text);
 }
 
 .sidebar-title {
   font-size: 20px;
   font-weight: 800;
-  color: var(--light-gray);
+  color: var(--text);
 }
 
 .sidebar-links {
@@ -42,7 +42,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
-  color: var(--light-gray);
+  color: var(--text);
   transition: 0.2s ease;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .sidebar-link:hover {
-  color: var(--white);
+  color: var(--light);
 }
 
 .sidebar-link:hover .sidebar-link__title {
@@ -71,5 +71,5 @@
 .sidebar-footer {
   padding-top: 16px;
   border-top: 1px solid var(--border);
-  color: var(--light-gray);
+  color: var(--text);
 }
