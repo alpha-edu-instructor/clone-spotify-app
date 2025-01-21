@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { GrHomeRounded } from "react-icons/gr";
 import logo from "../../assets/img/logo.svg";
+import logoDark from "../../assets/img/logo-dark.svg";
 import { SEARCH_PAGE_ROUTE } from "../../utils/consts";
+import { useTheme } from "../../providers/ThemeProvider";
 
 export default function Header() {
+  const { isLightTheme } = useTheme();
   const [searchInput, setSearchInput] = useState("");
 
   const navigate = useNavigate();
@@ -22,7 +25,7 @@ export default function Header() {
     <div className="header">
       <div className="header-part">
         <img
-          src={logo}
+          src={isLightTheme ? logoDark : logo}
           alt="Logo"
           width={32}
           height={32}
