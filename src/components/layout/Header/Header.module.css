@@ -5,14 +5,14 @@
   align-items: center;
 }
 
-.header-part:nth-child(2) {
+.part:nth-child(2) {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
 
-.home-btn {
+.btn {
   width: 48px;
   aspect-ratio: 1/1;
   display: flex;
@@ -24,12 +24,12 @@
   transition: 0.2s ease;
 }
 
-.home-btn svg {
+.btn svg {
   font-size: 24px;
   color: var(--text);
 }
 
-.home-btn:hover {
+.btn:hover {
   border: 1px solid var(--border);
   background: var(--secondary-color-hover);
 }
@@ -38,7 +38,7 @@
   position: relative;
 }
 
-.search-input {
+.input {
   width: 474px;
   padding: 0 24px 0 48px;
   height: 48px;
@@ -52,22 +52,22 @@
   transition: 0.2s ease;
 }
 
-.search-input:hover {
+.input:hover {
   border: 1px solid var(--border);
   background: var(--secondary-color-hover);
 }
 
-.search-input:focus {
+.input:focus {
   outline: 2px solid var(--light);
 }
 
-.search-input::placeholder {
+.input::placeholder {
   font-size: 15px;
   font-weight: 400;
   color: var(--text);
 }
 
-.search-icon {
+.icon {
   position: absolute;
   top: 12px;
   left: 12px;

@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { GrHomeRounded } from "react-icons/gr";
-import logo from "../../assets/img/logo.svg";
-import logoDark from "../../assets/img/logo-dark.svg";
-import { SEARCH_PAGE_ROUTE } from "../../utils/consts";
-import { useTheme } from "../../providers/ThemeProvider";
+import logo from "../../../assets/img/logo.svg";
+import logoDark from "../../../assets/img/logo-dark.svg";
+import { ALBUMS_PAGE_ROUTE, SEARCH_PAGE_ROUTE } from "../../../utils/consts";
+import { useTheme } from "../../../providers/ThemeProvider";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const { isLightTheme } = useTheme();
@@ -22,32 +23,31 @@ export default function Header() {
   }
 
   return (
-    <div className="header">
-      <div className="header-part">
+    <div className={styles.header}>
+      <div className={styles.part}>
         <img
           src={isLightTheme ? logoDark : logo}
           alt="Logo"
           width={32}
           height={32}
-          className="header-img"
         />
       </div>
-      <div className="header-part">
-        <a href="test" className="home-btn">
+      <div className={styles.part}>
+        <Link href={ALBUMS_PAGE_ROUTE} className={styles.btn}>
           <GrHomeRounded />
-        </a>
-        <form className="search" onSubmit={handleSubmit}>
+        </Link>
+        <form className={styles.search} onSubmit={handleSubmit}>
           <input
             type="text"
-            className="search-input"
+            className={styles.input}
             placeholder="Что хочешь включить?"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
           />
-          <FiSearch className="search-icon" />
+          <FiSearch className={styles.icon} />
         </form>
       </div>
-      <div className="header-part"></div>
+      <div className={styles.part}></div>
     </div>
   );
 }

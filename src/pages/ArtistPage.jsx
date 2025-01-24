@@ -1,38 +1,13 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PiSealCheckFill } from "react-icons/pi";
 import Loader from "../components/shared/Loader";
 import TrackItem from "../components/tracks/TrackItem";
 import { convertMsToTime } from "../utils/utils";
-import { axiosInstance } from "../services/axios";
+import { useArtistData } from "../hooks/useArtistData";
 
 export default function ArtistPage() {
   const { id } = useParams();
-  const [isLoading, setIsLoading] = useState(false);
-  const [artistData, setArtistData] = useState({});
-  const [tracks, setTracks] = useState([]);
-
-  useEffect(() => {
-    async function fetchArtistData() {
-      try {
-        setIsLoading(true);
-        const responseArtist = await axiosInstance.get(
-          `artists/${id}?market=KZ`
-        );
-        const responseTracks = await axiosInstance.get(
-          `artists/${id}/top-tracks?market=KZ`
-        );
-
-        setArtistData(responseArtist.data);
-        setTracks(responseTracks.data.tracks);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchArtistData();
-  }, [id]);
+  const { artistData, isLoading, tracks } = useArtistData(id);
 
   if (isLoading) {
     return (
